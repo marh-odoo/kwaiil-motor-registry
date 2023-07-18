@@ -10,7 +10,10 @@ This Module is used to keep track of the Motorcycle Registration and Ownership o
     'website' : 'www.odoo.com',
     'category' : 'Custom Modules / Technical Training',
     'depends' : ['base'],
-    'data': [],
+    'data': [
+        'security/kwaiil_groups.xml',
+        'security/ir.model.access.csv',
+    ],
     'demo': [],
     'application' : True,
 }   

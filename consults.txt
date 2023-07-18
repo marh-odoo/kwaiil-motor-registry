@@ -1,5 +1,6 @@
 some_motorcycle = env['motorcycle.course'].create({'registry_number' : 'Miguel00', 'vin' : 'MJSL', 'first_name' : 'Miguel', 'last_name' : 'Lara Mullwer'})
 
+some_motorcycle.write({'current_mileage' : 12330.0})
 
 env['motorcycle.course'].search_read([('current_mileage', '<' , 1000.0)])
 ('registry_numer', '=', 'Mauricio29')
@@ -8,3 +9,8 @@ env['motorcycle.course'].search_read([('current_mileage', '<' , 1000.0)])
 env['motorcycle.course'].search_read([('vin', '!=' , ''), ('license_plate', '=' , False)], ['registry_number', 'vin', 'license_plate', 'last_name'])
 
 env['motorcycle.course'].search_read(['|', ('vin', '!=' , ''), ('license_plate', '=' , True)], ['registry_number', 'vin', 'license_plate', 'last_name'])
+
+
+some_motorcycle.write({'registry_number' : 'John Wick', 'last_name' : 'John Wick'})
+
+some_motorcycle.unlink()
