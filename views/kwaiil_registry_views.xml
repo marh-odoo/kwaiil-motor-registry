@@ -2,7 +2,7 @@
 <odoo>
     <record id="registry_view_form" model="ir.ui.view">
         <field name="name">registry.view.form</field>
-        <field name="model">motorcycle.course</field>
+        <field name="model">motorcycle.registry</field>
         <field name="arch" type="xml">
             <form string="Motorcycle Registry List">
                 <header>
@@ -40,7 +40,7 @@
     </record>
     <record id="course_view_list" model="ir.ui.view">
         <field name="name">registry.view.list</field>
-        <field name="model">motorcycle.course</field>
+        <field name="model">motorcycle.registry</field>
         <field name="arch" type="xml">
             <tree string="Motorcycle Records list">
                 <field name="registry_number"></field>
@@ -53,7 +53,7 @@
     </record>
     <record id="course_view_search" model="ir.ui.view">
         <field name="name">registry.view.search</field>
-        <field name="model">motorcycle.course</field>
+        <field name="model">motorcycle.registry</field>
         <field name="arch" type="xml">
             <search>
                 <field name="registry_number"></field>

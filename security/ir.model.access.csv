@@ -1,4 +1,4 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-kwaiil_admin,kwaiil admin,model_motorcycle_course,group_kwaiil_admin,1,1,1,1
-kwaiil_user,kwaiil user,model_motorcycle_course,group_kwaiil_user,1,0,1,0
-kwaiil_read_all,kwaiil read all,model_motorcycle_course,,1,0,0,0
+kwaiil_admin,kwaiil admin,model_motorcycle_registry,group_kwaiil_admin,1,1,1,1
+kwaiil_user,kwaiil user,model_motorcycle_registry,group_kwaiil_user,1,0,1,0
+kwaiil_read_all,kwaiil read all,model_motorcycle_registry,,1,0,0,0

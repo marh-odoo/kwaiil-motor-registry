@@ -1,7 +1,7 @@
 from odoo import fields, models
 
 class Motorcycle(models.Model):
-    _name = "motorcycle.course"
+    _name = "motorcycle.registry"
     _description = "Course Info two"
     _rec_name="registry_number"
     registry_number = fields.Char(string = "Name", required=True)
