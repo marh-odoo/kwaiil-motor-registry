@@ -14,12 +14,19 @@ class Motorcycle(models.Model):
     certificate_title= fields.Binary()
     register_date= fields.Date(string="YYYY-MM-DD",required=False)
 
+    _sql_constrains = [
+        ('vin', '', 'You must to enter a valid vin')
+    ]
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
             if vals.get('registry_number', ('MRN0000')) == ('MRN0000'):
                 vals['registry_number'] = self.env['ir.sequence'].next_by_code('motorcycle.registry.number')
         return super().create(vals)   
+    
+
+   
 
 #     vin - char, required
 # first_name - char, required
