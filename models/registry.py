@@ -11,7 +11,7 @@ class Motorcycle(models.Model):
     picture = fields.Image(string="", required=False)
     current_mileage = fields.Float(string="",required=False)
     license_plate = fields.Char(string="",required=False)
-    certificate_title= fields.Binary(string="",required=False)
+    certificate_title= fields.Binary()
     register_date= fields.Date(string="YYYY-MM-DD",required=False)
 #     vin - char, required
 # first_name - char, required
