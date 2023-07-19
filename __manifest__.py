@@ -13,6 +13,7 @@ This Module is used to keep track of the Motorcycle Registration and Ownership o
     'data': [
         'security/kwaiil_groups.xml',
         'security/ir.model.access.csv',
+        'data/registry_data.xml',
         'views/kwaii_menu_items.xml',
         'views/kwaiil_registry_views.xml'
 
