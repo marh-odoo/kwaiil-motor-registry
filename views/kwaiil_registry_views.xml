@@ -20,11 +20,15 @@
                             <field name="vin" string="VIN"></field>
                             <field name="current_mileage" string="Current Mileage"></field>
                             <field name="license_plate" string="License plate number"></field>
+                            <field name="brand" />
+                            <field name="make" />
+                            <field name="model" />
                         </group>
                         <group>
                             <separator string="OWNER INFORMATION" />
-                            <field name="first_name" string="First Name"></field>
-                            <field name="last_name" string="Last Name"></field>
+                            <field name="partner_id" />
+                            <field name="phone" />
+                            <field name="email" />
                         </group>
                     </group>
                     <notebook>
@@ -46,8 +50,11 @@
                 <field name="registry_number"></field>
                 <field name="vin"></field>
                 <field name="license_plate"></field>
-                <field name="first_name"></field>
-                <field name="last_name"></field>
+                <field name="brand"></field>
+                <field name="make"></field>
+                <field name="model" />
+                <field name="license_plate" />
+                <field name="owner" />
             </tree>
         </field>
     </record>
@@ -56,10 +63,13 @@
         <field name="model">motorcycle.registry</field>
         <field name="arch" type="xml">
             <search>
-                <field name="registry_number"></field>
+                <field name="registry_number" string="Registry Number"></field>
                 <field name="vin"></field>
-                <field name="first_name"></field>
-                <field name="last_name"></field>
+                <field name="brand"></field>
+                <field name="make"></field>
+                <field name="model" />
+                <field name="license_plate" />
+                <field name="owner" />
             </search>
         </field>
     </record>
