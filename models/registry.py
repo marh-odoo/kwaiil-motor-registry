@@ -1,5 +1,7 @@
 from odoo import api, fields, models
 from odoo.exceptions import ValidationError
+import re
+
 class Motorcycle(models.Model):
     _name = "motorcycle.registry"
     _description = "Course Info two"
@@ -15,7 +17,7 @@ class Motorcycle(models.Model):
     register_date= fields.Date(string="YYYY-MM-DD",required=False)
 
     _sql_constrains = [
-        ('vin', '', 'You must to enter a valid vin')
+        ('vin', 'UNIQUE(vin)', 'You must to enter a valid vin')
     ]
 
     @api.model_create_multi
@@ -25,6 +27,24 @@ class Motorcycle(models.Model):
                 vals['registry_number'] = self.env['ir.sequence'].next_by_code('motorcycle.registry.number')
         return super().create(vals)   
     
+    @api.constrains('vin')
+    def _check_vin(self):
+        for record in self:
+            # match = re.search(r'[A-Z]\d4, [0-9]\d8, [0-9]\d2 | [A-Z]\d2', record)
+            # if not match:
+            if not record == 'hola':
+                raise ValidationError("Must enter a valid vin")
+        return super().create(record)
+
+    @api.constrains('license_plate')
+    def _check_vin(self):
+        for record in self:
+            # match = re.search(r'[A-Z]\d4, [0-9]\d8, [0-9]\d2 | [A-Z]\d2', record)
+            # if not match:
+            if record == '':
+                raise ValidationError("Must enter a valid license_plate")
+        return super().create(record)
+
 
    
 
