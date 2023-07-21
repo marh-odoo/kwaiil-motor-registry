@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="motor_website">
+        <t t-call="website.layout">
+            <t t-set="title" t-value="Motor" />
+            <div class="oe_structure">
+                <div class="container mt-3">
+                    <h1>
+                        Motorcycle Comparision
+                    </h1>
+                    <div class="row mt-3 d-flex justify-content-center">
+                        <div class="col-sm">
+                            <div class="container border">
+                                <h2 class="p-1">Specs</h2>
+                                <div class="d-flex flex-column">
+                                    <div class="border p-3">
+                                        Launch Date:
+                                    </div>
+                                    <div class="border p-3">
+                                        Range
+                                    </div>
+                                    <div class="border p-3">
+                                        HorsePower
+                                    </div>
+                                    <div class="border p-3">
+                                        Torque
+                                    </div>
+                                    <div class="border p-3">
+                                        Top speed
+                                    </div>
+                                    <div class="border p-3">
+                                        Battery Capacity
+                                    </div>
+                                    <div class="border p-3">
+                                        Curb Weight
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <t t-foreach="motos" t-as="moto">
+                            <div class="col-sm mb-3">
+                                <div class="container border">
+                                    <h2 class="p-1">
+                                        <t t-esc="moto.name" />
+                                    </h2>
+                                    <div class="d-flex flex-column">
+                                        <div class="border p-3">
+                                            <t t-esc="moto.year" />
+                                        </div>
+                                        <div class="border p-3">
+                                            <t t-esc="moto.range" />
+                                        </div>
+                                        <div class="border p-3">
+                                            <t t-esc="moto.horsepower" />
+                                        </div>
+                                        <div class="border p-3">
+                                            <t t-esc="moto.torque" />
+                                        </div>
+                                        <div class="border p-3">
+                                            <t t-esc="moto.top_speed" />
+                                        </div>
+                                        <div class="border p-3">
+                                            <t t-esc="moto.battery_capacity" />
+                                        </div>
+                                        <div class="border p-3">
+                                            <t t-esc="moto.curb_weight" />
+                                        </div>
+                                        <img class="img-thumbnail" t-if="moto.image_1920" t-att-src="image_data_uri(moto.image_1920)"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
